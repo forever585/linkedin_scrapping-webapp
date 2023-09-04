@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <link href="{{ url_for('static', filename='css/global/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/global/dataTables.bootstrap5.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/global/scroller.bootstrap5.min.css') }}" rel="stylesheet"/>
+    
+    {% block style %} 
+    <!-- Stylesheet for Every Page Will Be Here -->
+    {% endblock %}
+
+    <link rel="icon" href="{{ url_for('static', filename='/images/linkedin.png') }}"/>
+
+    <title>
+      {% block title %} 
+        <!-- Title for Every Page Will Be Here -->
+      {% endblock %}
+    </title>
+  </head>
+<body class="form-only-page">
+  <div class="background"></div>
+  <div class="container mt-5">
+
+    {% block content %}
+    <!-- Content for Every Page Will Be Here -->
+    {% endblock %}
+
+  </div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/global/jquery-3.7.0.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/global/jquery.dataTables.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/global/dataTables.bootstrap5.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/global/dataTables.scroller.min.js') }}"></script>
+  {% block script %} 
+    <!-- Javascript for Every Page Will Be Here -->
+  {% endblock %}
+  
+</body>
+</html>
